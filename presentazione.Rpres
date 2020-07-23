@@ -1,0 +1,54 @@
+Week 4 assignment
+========================================================
+title: Week 4 Assignment
+author: Leonardo Longo
+date: 23/07/2020
+autosize: true
+
+General instructions
+========================================================
+
+This is my presentation for week 4 assignment of the Developing Data Products course from Coursera.
+In this assignment I've created a Shiny application, and I've shared it in the Rstudio shiny server.
+
+My Shiny App
+========================================================
+
+I choose a uniform distribution with the range from 0 (minimum) to 1 (maximum) that can be used as base for examination by the user.
+
+- A slider allows the user to determine the sample size
+- basic statistics are displayed
+- histogram is displayed
+
+Code Example
+========================================================
+
+```{r, eval=FALSE}
+output$mean <- renderText({paste("Mean= ", round(mean(histData ()), 4 ) )  })
+     
+  output$sd <- renderText({paste("Standard deviation= ", round(sd(histData ()), 6 )) 
+     
+  output$median <- renderText({paste("Median= ", round(median(histData ()), 4 ) ) })
+```
+
+Slide With Plot
+========================================================
+
+```{r histData, echo=FALSE}
+ x <- rnorm(40,0.5,0.2)
+plot(hist(x,from=1,to=10,xlim=c(0,1),col="green"))
+
+```
+
+References
+========================================================
+
+My github repository contains the Shiny programs:
+
+- server.R
+- ui.R
+
+
+
+
+<https://github.com/leolongo1995/Week-4-Assignment>
